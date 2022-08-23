@@ -120,10 +120,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
 // Solution code here...
-  let names = starWarsData.reduce ((a, v, i) => {
-    a = a + v.name;
-    return a;
-  }, 0);
+  starWarsData.reduce ((a, v) => {
+    a.push (v.name);
+    return arr;
+  }, []);
+  // console.log(names);
 };
 
 /* ------------------------------------------------------------------------------------------------
