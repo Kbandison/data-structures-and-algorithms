@@ -9,30 +9,29 @@ Write a function called sortStarWarsCharacters that sorts the characters in the 
 let starWarsPeople = [
   {
     name: 'C-3PO',
-    height: 167,
+    height: '167',
     eye_color: 'yellow'
   },
   {
     name: 'Luke Skywalker',
-    height: 172,
+    height: '172',
     eye_color: 'blue'
   },
   {
     name: 'R2-D2',
-    height: 96,
+    height: '96',
     eye_color: 'red'
   },
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  let heightArr = starWarsPeople.sort((a, b) => {
+  starWarsPeople.sort((a, b) => {
     if (a.height > b.height) {return 1;}
     else if(a.height < b.height) {return -1;}
     else{return 0;}
   });
-  starWarsArr.push(heightArr);
-  // return starWarsArr;
+  return starWarsArr.sort((a,b) => b.height - a.height );
 };
 
 /* ------------------------------------------------------------------------------------------------
