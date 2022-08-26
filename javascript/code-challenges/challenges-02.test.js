@@ -131,11 +131,13 @@ const evenOdd = (arr) => {
   // Solution code here...
   arr.map((value) => {
     if (value % 2 === 0) {
-      return 'even';
+      strArr.push('even');
+
     } else if (value % 2 === 1) {
-      return 'odd';
+      strArr.push('odd');
+
     } else{
-      return 'N/A';
+      strArr.push('N/A');
     }
   });
   return strArr;
@@ -325,7 +327,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
     expect(extractAbilities(snorlaxAbilities.abilities).length).toStrictEqual(3);
