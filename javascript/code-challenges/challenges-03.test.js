@@ -25,10 +25,11 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
+
   let numArr = arr.filter (value =>
     typeof value === 'number'
   );
-  return numArr;
+return numArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +58,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+
   let oddArr = arr.filter((value) => value % 2);
   return oddArr;
 };

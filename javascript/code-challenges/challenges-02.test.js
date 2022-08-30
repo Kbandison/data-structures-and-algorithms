@@ -9,17 +9,27 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
+  let thirdArr = [];
   // Solution code here...
+  arr.forEach((value) =>{
+    thirdArr.push(Math.pow(value, 3));
+  });
+  return thirdArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
+Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
+  let addArr = [];
   // Solution code here...
+  arr.map((value) => {
+    addArr.push(value + 1);
+  });
+  return addArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +39,12 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
+  let questArr = [];
   // Solution code here...
+  arr.map((value) => {
+    questArr.push(value + '?');
+  });
+  return questArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +58,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
+  let loopArr = [];
+  // let arrLoop = [];
   // Solution code here...
+  arr.map((value) => {
+    loopArr.push(Math.pow(2, value));
+  });
+  return loopArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +74,12 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
+  let eachArr = [];
   // Solution code here...
+  arr.forEach ((value) => {
+    eachArr.push(Math.pow(2, value));
+  });
+  return eachArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +89,12 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
+  let mapArr = [];
   // Solution code here...
+  arr.map((value) => {
+    mapArr.push(Math.pow(2, value));
+  });
+  return mapArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +108,12 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
+  let charArr = [];
   // Solution code here...
+  arr.map((value) => {
+    charArr.push(value.charCodeAt(0));
+  });
+  return charArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,7 +127,20 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
+  let strArr = [];
   // Solution code here...
+  arr.map((value) => {
+    if (value % 2 === 0) {
+      strArr.push('even');
+
+    } else if (value % 2 === 1) {
+      strArr.push('odd');
+
+    } else{
+      strArr.push('N/A');
+    }
+  });
+  return strArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -249,14 +298,14 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
